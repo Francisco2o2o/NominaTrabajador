@@ -1,0 +1,4 @@
+Server=DESKTOP-D4F7FGN
+DataBase=DbPagosMimina
+User=sa
+Password=123456
