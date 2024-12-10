@@ -23,7 +23,7 @@ namespace CapaPresentacion
     {
         //Variables de busqueda
         static Boolean pasoLoad;
-        static Int32 tabInicio = 0;
+   
         public frmPagos()
         {
             InitializeComponent();
