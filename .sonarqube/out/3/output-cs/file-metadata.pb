@@ -1,0 +1,13 @@
+l
+aD:\C#\SistemaMonimaTrabajo\CapaNegocio\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.csutf-8J
+AD:\C#\SistemaMonimaTrabajo\CapaNegocio\Properties\AssemblyInfo.csutf-8D
+;D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTrabajador.csutf-8M
+DD:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTipoContratoLaboral.csutf-8A
+8D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPeriodo.csutf-8>
+5D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPago.csutf-8I
+@D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioEspecializacion.csutf-8I
+@D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioContratoLaboral.csutf-8F
+=D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioConceptoPago.csutf-8N
+ED:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.csutf-8?
+6D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosPagos.csutf-8I
+@D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosContratoLaboral.csutf-8

@@ -19,7 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
-using static CapaNegocio.MetodosContratoLaboral;
+
 
 namespace CapaPresentacion
 {
@@ -27,7 +27,7 @@ namespace CapaPresentacion
     {
         //Variables de busqueda
         static Boolean pasoLoad;
-       
+
 
         public frmContratoLaboral()
         {
@@ -66,7 +66,7 @@ namespace CapaPresentacion
             rbContratoDoceMeses.Checked = true;
             FuncionesValidaciones.EstablecerFechasMesActual(dtFechaInicio, dtFechaFin);
 
-            bool EstadoActivarBotonRegistrar = FuncionesValidaciones.FuncionPropiedadesControles(btnRegistrarContratoLaboral, btnActualizarContratoLaboral, btnLimpiarContratoLaboral, FuncionValidarTextBox());
+            bool EstadoActivarBotonRegistrar = FuncionesValidaciones.FuncionPropiedadesControles(btnRegistrarContratoLaboral, btnActualizarContratoLaboral, btnLimpiarContratoLaboral, FuncionEstaTextBoxVacio());
             btnRegistrarContratoLaboral.Enabled = EstadoActivarBotonRegistrar;
 
 
@@ -85,7 +85,7 @@ namespace CapaPresentacion
         }
 
         #region  Validar Controles Vacios
-        public bool FuncionValidarTextBox()
+        public bool FuncionEstaTextBoxVacio()
         {
             if (cboTrabajador.SelectedIndex != 0 && cboTipoContrato.SelectedIndex != 0 && cboCargo.SelectedIndex != 0 && txtHorasTotalesContratoLaboral.Text != "")
             {
@@ -100,9 +100,9 @@ namespace CapaPresentacion
         #endregion
 
         #region Funcion Validar Changed
-        public void FuncionValidarChanged()
+        public void FuncionEstaChangedVacio()
         {
-            bool esValido = FuncionValidarTextBox();
+            bool esValido = FuncionEstaTextBoxVacio();
             btnLimpiarContratoLaboral.Visible = esValido;
             btnRegistrarContratoLaboral.Enabled = esValido;
             btnActualizarContratoLaboral.Visible = esValido;
@@ -129,7 +129,7 @@ namespace CapaPresentacion
                 Mbox.Show("Error al llenar el ComboBox: " + ex.Message);
                 return lstCargo;
             }
-           
+
         }
         #endregion
 
@@ -153,7 +153,7 @@ namespace CapaPresentacion
                 Mbox.Show("Error al llenar el ComboBox: " + ex.Message);
                 return lstTipoContratoLaboral;
             }
-        
+
         }
         #endregion
 
@@ -191,72 +191,60 @@ namespace CapaPresentacion
         {
             TipoContratoLaboral selectedTipoContratoLaboral = (TipoContratoLaboral)cboTipoContrato.SelectedItem;
 
-            if (selectedTipoContratoLaboral != null)
+            if (selectedTipoContratoLaboral == null)
             {
-                txtSalarioContratoLaboral.Text = selectedTipoContratoLaboral.SalarioBaseTipoContratoLaboral.ToString();
-
-                if (selectedTipoContratoLaboral.IdTipoContratoLaboral == 0)
-                {
-                    txtIdTipoContratoLaboral.Text = selectedTipoContratoLaboral.IdTipoContratoLaboral.ToString();
-                    txtHorasDiariasContratoLaboral.Text = "1";
-                    txtHorasTotalesContratoLaboral.Text = "30";
-                    txtSalarioContratoLaboral.Text = "800";
-                }
-
-                else if (selectedTipoContratoLaboral.IdTipoContratoLaboral == 1)
-                {
-                    txtIdTipoContratoLaboral.Text = selectedTipoContratoLaboral.IdTipoContratoLaboral.ToString();
-                    txtHorasDiariasContratoLaboral.Enabled = false;
-                    txtHorasTotalesContratoLaboral.Enabled = false;
-                    txtSalarioContratoLaboral.Enabled = false;
-                    txtHorasDiariasContratoLaboral.Text = "8";
-                    txtHorasTotalesContratoLaboral.Text = "160";
-                    btnActualizarContratoLaboral.Enabled = true;
-                }
-                else if (selectedTipoContratoLaboral.IdTipoContratoLaboral == 2)
-                {
-                    txtIdTipoContratoLaboral.Text = selectedTipoContratoLaboral.IdTipoContratoLaboral.ToString();
-                    txtHorasDiariasContratoLaboral.Enabled = false;
-                    txtHorasTotalesContratoLaboral.Enabled = false;
-                    txtSalarioContratoLaboral.Enabled = false;
-                    txtHorasDiariasContratoLaboral.Text = "4";
-                    txtHorasTotalesContratoLaboral.Text = "80";
-                    btnActualizarContratoLaboral.Enabled = true;
-                }
-                else if (selectedTipoContratoLaboral.IdTipoContratoLaboral == 3)
-                {
-                    txtIdTipoContratoLaboral.Text = selectedTipoContratoLaboral.IdTipoContratoLaboral.ToString();
-                    txtHorasDiariasContratoLaboral.Enabled = true;
-                    txtHorasTotalesContratoLaboral.Enabled = true;
-                    txtSalarioContratoLaboral.Enabled = true;
-                    txtHorasDiariasContratoLaboral.Text = "1";
-                    txtHorasTotalesContratoLaboral.Text = "30";
-                    btnLimpiarContratoLaboral.Visible = true;
-                }
+                LimpiarCamposContratoLaboral();
+                return;
             }
-            else
+            txtIdTipoContratoLaboral.Text = selectedTipoContratoLaboral.IdTipoContratoLaboral.ToString();
+
+            switch (selectedTipoContratoLaboral.IdTipoContratoLaboral)
             {
-                txtIdTipoContratoLaboral.Text = string.Empty;
-                txtHorasDiariasContratoLaboral.Enabled = false;
-                txtHorasTotalesContratoLaboral.Enabled = false;
-                txtSalarioContratoLaboral.Enabled = false;
-                txtSalarioContratoLaboral.Text = string.Empty;
-                txtHorasDiariasContratoLaboral.Text = string.Empty;
-                txtHorasTotalesContratoLaboral.Text = string.Empty;
-                btnLimpiarContratoLaboral.Visible = false;
+                case 0:
+                    ConfigurarCamposContrato(1, 30, "800", false, false, false);
+                    break;
+
+                case 1:
+                    ConfigurarCamposContrato(8, 160, "", false, false, false);
+                    break;
+
+                case 2:
+                    ConfigurarCamposContrato(4, 80, "", false, false, false);
+                    break;
+
+                case 3:
+                    ConfigurarCamposContrato(1, 30, "", true, true, true);
+                    break;
             }
 
-            FuncionValidarChanged();
-            if (cboTipoContrato.SelectedValue != null)
-            {
-                cboTipoContrato.BorderColor = Color.FromArgb(192, 192, 192);
-            }
-            else
-            {
-                cboTipoContrato.BorderColor = Color.FromArgb(157, 31, 56);
-            }
+            cboTipoContrato.BorderColor = cboTipoContrato.SelectedValue != null ? Color.FromArgb(192, 192, 192) : Color.FromArgb(157, 31, 56);
+
+            FuncionEstaChangedVacio();
         }
 
+        private void ConfigurarCamposContrato(int horasDiarias, int horasTotales, string salario, bool habilitarHoras, bool habilitarTotales, bool habilitarSalario)
+        {
+            txtHorasDiariasContratoLaboral.Text = horasDiarias.ToString();
+            txtHorasTotalesContratoLaboral.Text = horasTotales.ToString();
+            txtSalarioContratoLaboral.Text = salario;
+            txtHorasDiariasContratoLaboral.Enabled = habilitarHoras;
+            txtHorasTotalesContratoLaboral.Enabled = habilitarTotales;
+            txtSalarioContratoLaboral.Enabled = habilitarSalario;
+            btnActualizarContratoLaboral.Enabled = habilitarHoras && habilitarTotales && habilitarSalario;
+            btnLimpiarContratoLaboral.Visible = habilitarHoras;
+        }
+
+        private void LimpiarCamposContratoLaboral()
+        {
+            txtIdTipoContratoLaboral.Text = string.Empty;
+            txtHorasDiariasContratoLaboral.Enabled = false;
+            txtHorasTotalesContratoLaboral.Enabled = false;
+            txtSalarioContratoLaboral.Enabled = false;
+            txtSalarioContratoLaboral.Text = string.Empty;
+            txtHorasDiariasContratoLaboral.Text = string.Empty;
+            txtHorasTotalesContratoLaboral.Text = string.Empty;
+            btnLimpiarContratoLaboral.Visible = false;
+        }
         #endregion
 
         #region Mostrar Especialidad por Trabajador
@@ -266,121 +254,91 @@ namespace CapaPresentacion
 
             if (selectedTrabajador != null)
             {
-                txtEspecialidadtrabajador.Text = selectedTrabajador.NombreEspecializacion.ToString();
+                txtEspecialidadtrabajador.Text = selectedTrabajador.NombreEspecializacion;
                 txtIdTrabajador.Text = selectedTrabajador.IdTrabajador.ToString();
-
             }
             else
             {
-                txtSalarioContratoLaboral.Text = string.Empty;
+                txtEspecialidadtrabajador.Text = string.Empty;
+                txtIdTrabajador.Text = string.Empty;
+            }
 
-
-            }
-            FuncionValidarChanged();
-            if (cboTrabajador.SelectedValue != null)
-            {
-                cboTrabajador.BorderColor = Color.FromArgb(192, 192, 192);
-            }
-            else
-            {
-                cboTrabajador.BorderColor = Color.FromArgb(157, 31, 56);
-            }
+            ActualizarBorderColor(cboTrabajador);
+            FuncionEstaChangedVacio();
         }
         #endregion
 
-        //Evento Changed txtEspecialidadtrabajador
+        // Evento Changed txtEspecialidadtrabajador
         private void txtEspecialidadtrabajador_TextChanged(object sender, EventArgs e)
         {
-            FuncionValidarChanged();
-            if (!string.IsNullOrWhiteSpace(txtEspecialidadtrabajador.Text))
-            {
-                txtEspecialidadtrabajador.BorderColor = Color.FromArgb(192, 192, 192);
-            }
-            else
-            {
-                txtEspecialidadtrabajador.BorderColor = Color.FromArgb(157, 31, 56);
-            }
+            ActualizarBorderColor(txtEspecialidadtrabajador);
+            FuncionEstaChangedVacio();
         }
 
-        //Evento Changed cboCargo
+        // Evento Changed cboCargo
         private void cboCargo_SelectedIndexChanged(object sender, EventArgs e)
-            {
-            FuncionValidarChanged();
+        {
             CargoContratoLaboral selectedCargoContratoLaboral = (CargoContratoLaboral)cboCargo.SelectedItem;
 
             if (selectedCargoContratoLaboral != null)
             {
                 txtIdCargo.Text = selectedCargoContratoLaboral.IdCargoContratoLaboral.ToString();
                 btnActualizarContratoLaboral.Visible = true;
-               
             }
             else
             {
                 txtIdCargo.Text = string.Empty;
+                btnActualizarContratoLaboral.Visible = false;
             }
 
-            if (cboCargo.SelectedValue != null)
-            {
-                cboCargo.BorderColor = Color.FromArgb(192, 192, 192);
-            }
-            else
-            {
-                cboCargo.BorderColor = Color.FromArgb(157, 31, 56);
-            }
+            ActualizarBorderColor(cboCargo);
+            FuncionEstaChangedVacio();
         }
 
-        //Evento Changed txtHorasTotalesContratoLaboral - Validar txtHorasDiariasContratoLaboral vacio
+        // Evento Changed txtHorasTotalesContratoLaboral
         private void txtHorasTotalesContratoLaboral_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtHorasDiariasContratoLaboral.Text) ||
-    string.IsNullOrWhiteSpace(txtHorasTotalesContratoLaboral.Text))
-            {
-                btnActualizarContratoLaboral.Enabled = false;
-            }
-            else
-            {
-                btnActualizarContratoLaboral.Enabled = true;
-            }
+            btnActualizarContratoLaboral.Enabled = !string.IsNullOrWhiteSpace(txtHorasDiariasContratoLaboral.Text) &&
+                                                   !string.IsNullOrWhiteSpace(txtHorasTotalesContratoLaboral.Text);
 
-            FuncionValidarChanged();
             ActualizarSalarioPorHora();
+            FuncionEstaChangedVacio();
         }
 
-        //Evento Changed txtSalarioContratoLaboral
+        // Evento Changed txtSalarioContratoLaboral
         private void txtSalarioContratoLaboral_TextChanged(object sender, EventArgs e)
         {
             if (txtSalarioContratoLaboral.Text == "0")
             {
                 txtSalarioContratoLaboral.Text = "800";
             }
-            FuncionValidarChanged();
             ActualizarSalarioPorHora();
+            FuncionEstaChangedVacio();
         }
 
-        //Evento Changed txtSalarioxHoraContratoLaboral
+        // Evento Changed txtSalarioxHoraContratoLaboral
         private void txtSalarioxHoraContratoLaboral_TextChanged(object sender, EventArgs e)
         {
-            FuncionValidarChanged();
-            if (!string.IsNullOrWhiteSpace(txtSalarioxHoraContratoLaboral.Text))
-            {
-                txtSalarioxHoraContratoLaboral.BorderColor = Color.FromArgb(192, 192, 192);
-            }
-            else
-            {
-                txtSalarioxHoraContratoLaboral.BorderColor = Color.FromArgb(157, 31, 56);
-            }
+            ActualizarBorderColor(txtSalarioxHoraContratoLaboral);
+            FuncionEstaChangedVacio();
         }
 
         // Evento changed chkEstadoTrabajador
         private void chkEstadoTrabajador_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEstadoContratoLaboral.Checked)
+            lblEstadoContratoLaboral.Text = chkEstadoContratoLaboral.Checked ? "ACTIVO" : "INACTIVO";
+        }
+
+        private void ActualizarBorderColor(dynamic control)
+        {
+
+            if (!string.IsNullOrWhiteSpace(control.Text))
             {
-                lblEstadoContratoLaboral.Text = "ACTIVO";
+                control.BorderColor = Color.FromArgb(192, 192, 192);
             }
             else
             {
-                lblEstadoContratoLaboral.Text = "INACTIVO";
+                control.BorderColor = Color.FromArgb(157, 31, 56);
             }
         }
         #endregion
@@ -412,7 +370,7 @@ namespace CapaPresentacion
             bool salarioEsValido = decimal.TryParse(txtSalarioContratoLaboral.Text, out decimal salarioTotal);
             bool horasSonValidas = int.TryParse(txtHorasTotalesContratoLaboral.Text, out int horasTotales);
 
-            CalcularSalarioContratoLaboral calcularSalario = new CalcularSalarioContratoLaboral();
+            MetodoCalcularSalarioPorHora calcularSalario = new MetodoCalcularSalarioPorHora();
 
             if (salarioEsValido && horasSonValidas && calcularSalario.CalcularSalarioPorHora(salarioTotal, horasTotales, out decimal salarioPorHora))
             {
@@ -457,33 +415,28 @@ namespace CapaPresentacion
         #endregion
 
         #region Función Registrar ContratoLaboral
-        public String funcionRegistrarContratoLaboral()
+        public string funcionRegistrarContratoLaboral()
         {
-            NegocioContratoLaboral objNegocioContratoLaboral = new NegocioContratoLaboral();
-            ContratoLaboral objContratoLaboral = new ContratoLaboral();
-
-            if (txtDescripcionContratoLaboral.Text == "Ingrese una breve descripcion")
-            {
-                txtDescripcionContratoLaboral.Text = "";
-            }
-
             try
             {
-                objContratoLaboral.IdContratoLaboral = Convert.ToInt32(txtIdContratoLaboral.Text.Trim() == "" ? "0" : txtIdContratoLaboral.Text.Trim());
-                objContratoLaboral.FechaInicioContratoLaboral = dtFechaInicioContrato.Value;
-                objContratoLaboral.FechaFinContratoLaboral = dtFechaFinContrato.Value;
-                objContratoLaboral.HorasTotalesContratoLaboral = Convert.ToInt32(txtHorasTotalesContratoLaboral.Text);
-                objContratoLaboral.FechaRegistroContratoLaboral = DateTime.Now;
-                objContratoLaboral.EstadoContratoLaboral = chkEstadoContratoLaboral.Checked;
-                objContratoLaboral.DescripcionContratoLaboral = txtDescripcionContratoLaboral.Text;
-                objContratoLaboral.IdCargoContratoLaboral = Convert.ToInt32(txtIdCargo.Text.Trim());
-                objContratoLaboral.IdTipoContratoLaboral = Convert.ToInt32(txtIdTipoContratoLaboral.Text.Trim());
-                objContratoLaboral.IdTrabajador = Convert.ToInt32(txtIdTrabajador.Text.Trim());
-                objContratoLaboral.SalarioContratoLaboral = decimal.TryParse(txtSalarioContratoLaboral.Text, out decimal salario) ? salario : 0.00m;
-                objContratoLaboral.HorasDiariasContratoLaboral = Convert.ToInt32(txtHorasDiariasContratoLaboral.Text);
-                objContratoLaboral.AsignaciónFamiliarContratoLaboral = decimal.TryParse(txtMontoAsignacionFamiliar.Text, out decimal AsignaciónFamiliar) ? AsignaciónFamiliar : 0.00m;
+                var objContratoLaboral = new ContratoLaboral
+                {
+                    IdContratoLaboral = string.IsNullOrEmpty(txtIdContratoLaboral.Text.Trim()) ? 0 : Convert.ToInt32(txtIdContratoLaboral.Text.Trim()),
+                    FechaInicioContratoLaboral = dtFechaInicioContrato.Value,
+                    FechaFinContratoLaboral = dtFechaFinContrato.Value,
+                    HorasTotalesContratoLaboral = Convert.ToInt32(txtHorasTotalesContratoLaboral.Text),
+                    FechaRegistroContratoLaboral = DateTime.Now,
+                    EstadoContratoLaboral = chkEstadoContratoLaboral.Checked,
+                    DescripcionContratoLaboral = txtDescripcionContratoLaboral.Text == "Ingrese una breve descripcion" ? string.Empty : txtDescripcionContratoLaboral.Text,
+                    IdCargoContratoLaboral = Convert.ToInt32(txtIdCargo.Text.Trim()),
+                    IdTipoContratoLaboral = Convert.ToInt32(txtIdTipoContratoLaboral.Text.Trim()),
+                    IdTrabajador = Convert.ToInt32(txtIdTrabajador.Text.Trim()),
+                    SalarioContratoLaboral = decimal.TryParse(txtSalarioContratoLaboral.Text, out decimal salario) ? salario : 0.00m,
+                    HorasDiariasContratoLaboral = Convert.ToInt32(txtHorasDiariasContratoLaboral.Text),
+                    AsignaciónFamiliarContratoLaboral = decimal.TryParse(txtMontoAsignacionFamiliar.Text, out decimal asignacionFamiliar) ? asignacionFamiliar : 0.00m
+                };
 
-                string mensajeValidar = objNegocioContratoLaboral.NegocioRegistrarContratoLaboral(objContratoLaboral).Trim();
+                string mensajeValidar = new NegocioContratoLaboral().NegocioRegistrarContratoLaboral(objContratoLaboral).Trim();
 
                 if (mensajeValidar == "OK")
                 {
@@ -576,7 +529,7 @@ namespace CapaPresentacion
         #region Funcion Limpiar Controles
         public void FuncionLimpiarControles()
         {
-            bool EstadoActivarBotonRegistrar = FuncionesValidaciones.FuncionPropiedadesControles(btnRegistrarContratoLaboral, btnActualizarContratoLaboral, btnLimpiarContratoLaboral, FuncionValidarTextBox());
+            bool EstadoActivarBotonRegistrar = FuncionesValidaciones.FuncionPropiedadesControles(btnRegistrarContratoLaboral, btnActualizarContratoLaboral, btnLimpiarContratoLaboral, FuncionEstaTextBoxVacio());
 
             if (EstadoActivarBotonRegistrar)
             {
@@ -614,58 +567,35 @@ namespace CapaPresentacion
         #region Funcion Tipos de Busqueda
         public void FuncionTiposBusqueda(Int32 tipoCon)
         {
-            Boolean bResult;
+            if (pasoLoad)
+            {
+                string mensajeError;
+                bool bResult;
 
-            if (tipoCon == 1)
-            {
-                if (pasoLoad)
+                if (tipoCon == 1 || tipoCon == 2)
                 {
                     bResult = FuncionBuscarContratoLaboral(dgvContratoLaboral, 0, out mensajeError);
-                    if (bResult)
-                    {
-                        FuncionesGenerales.ShowAlert("Registros encontrados", frmNotificacion.enmType.Info);
-                    }
-                    else
-                    {
-                        Mbox.Show(mensajeError, "Error de Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
                 }
-            }
-            else if (tipoCon == 2)
-            {
-                if (pasoLoad)
-                {
-                    bResult = FuncionBuscarContratoLaboral(dgvContratoLaboral, 0, out mensajeError);
-                    if (bResult)
-                    {
-                        FuncionesGenerales.ShowAlert("Registros encontrados", frmNotificacion.enmType.Info);
-                    }
-                    else
-                    {
-                        Mbox.Show(mensajeError, "Error de Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-            }
-            else
-            {
-                if (pasoLoad)
+                else
                 {
                     if (Int32.TryParse(cboPaginaContratoLaboral.Text, out int numPagina))
                     {
                         bResult = FuncionBuscarContratoLaboral(dgvContratoLaboral, numPagina, out mensajeError);
-                        if (bResult)
-                        {
-                            FuncionesGenerales.ShowAlert("Registros encontrados", frmNotificacion.enmType.Info);
-                        }
-                        else
-                        {
-                            Mbox.Show(mensajeError, "Error de Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
                     }
                     else
                     {
                         Mbox.Show("Por favor, ingrese un número válido en la página.", "Entrada no válida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
+                }
+
+                if (bResult)
+                {
+                    FuncionesGenerales.ShowAlert("Registros encontrados", frmNotificacion.enmType.Info);
+                }
+                else
+                {
+                    Mbox.Show(mensajeError, "Error de Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
@@ -674,11 +604,12 @@ namespace CapaPresentacion
         #region Función Búsqueda Contrato Laboral
         private bool SegundaBusqueda = false;
         static Int32 tabInicio = 0;
+
         public Boolean FuncionBuscarContratoLaboral(DataGridView dgv, Int32 numPagina, out string mensajeError)
         {
             mensajeError = string.Empty;
             NegocioContratoLaboral objNegocioContratoLaboral = new NegocioContratoLaboral();
-           
+
             String documentoTrabajador;
             Int32 filas = 18;
             DateTime fechaInicial = dtFechaInicio.Value;
@@ -694,6 +625,12 @@ namespace CapaPresentacion
                 dgvContratoLaboral.Visible = true;
                 dgvContratoLaboral.Rows.Clear();
                 Int32 totalResultados = dtContratoLaboral.Rows.Count;
+
+                if (totalResultados == 0)
+                {
+                    mensajeError = "No se encontraron registros.";
+                    return false;
+                }
 
                 #region Tamaño de Columnas de la Tabla [dgvContratoLaboral]
                 dgvContratoLaboral.Columns["Numero"].Width = 25;
@@ -758,12 +695,12 @@ namespace CapaPresentacion
                 else if (ex.Message.Contains("Cannot drop the table '#TempTrabajador"))
                 {
                     mensajeError = "No se encontraron registros de Contratos que coincidan con el documento ingresado.";
-                    dgv.Rows.Clear(); 
+                    dgv.Rows.Clear();
                 }
                 else if (ex.Message.Contains("No se encontraron registros. Por favor ingrese nuevos registros"))
                 {
                     mensajeError = "No se encontraron registros. Por favor ingrese nuevos registros";
-                    dgv.Rows.Clear(); 
+                    dgv.Rows.Clear();
                 }
                 else
                 {
@@ -771,7 +708,6 @@ namespace CapaPresentacion
                 }
                 return false;
             }
-           
         }
         #endregion
 
@@ -786,7 +722,7 @@ namespace CapaPresentacion
             Guna2TextBox textBox = sender as Guna2TextBox;
             int tipoCon = 1;
 
-            if (!MetodosValidaciones.ValidarSoloNumeros2(textBox.Text, tipoCon, e.KeyChar, out this.mensajeError)) // Usar 'this' si es un campo de clase
+            if (!MetodoSoloSonNumeros2.ValidarSoloNumeros2(textBox.Text, tipoCon, e.KeyChar, out this.mensajeError)) // Usar 'this' si es un campo de clase
             {
                 e.Handled = true;
                 Mbox.Show(this.mensajeError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -849,7 +785,7 @@ namespace CapaPresentacion
 
                 int idContratoLaboral = (int)selectedRow.Cells["IdContratoLaboral"].Value;
 
-               
+
                 try
                 {
                     if (selectedRow.Cells["fechaInicioContratoLaboral"].Value != DBNull.Value &&
@@ -992,8 +928,17 @@ namespace CapaPresentacion
         #region Metodo Cambiar Fechas de Contrato
         private void FuncionCambiarFechasContrato()
         {
-            Int32 intMesesDuracion = 0;
+            int intMesesDuracion = ObtenerDuracionContrato();
 
+            if (intMesesDuracion > 0)
+            {
+                MetodoSonFechasValidarContrato.EstablecerFechasContrato(out DateTime fechaInicial, out DateTime fechaFinal, intMesesDuracion);
+                dtFechaInicioContrato.Value = fechaInicial;
+                dtFechaFinContrato.Value = fechaFinal;
+            }
+        }
+        private int ObtenerDuracionContrato()
+        {
             IEnumerable<SiticoneRadioButton> grbRadioBtuttons = gbRangoFechasContrato.Controls.OfType<SiticoneRadioButton>();
 
             foreach (SiticoneRadioButton item in grbRadioBtuttons)
@@ -1001,24 +946,15 @@ namespace CapaPresentacion
                 if (item.Checked)
                 {
                     if (item.Name == "rbContratoTresMeses")
-                    {
-                        intMesesDuracion = 3;
-                    }
+                        return 3;
                     if (item.Name == "rbContratoSeisMeses")
-                    {
-                        intMesesDuracion = 6;
-                    }
+                        return 6;
                     if (item.Name == "rbContratoDoceMeses")
-                    {
-                        intMesesDuracion = 12;
-                    }
+                        return 12;
                 }
             }
 
-        MetodosValidaciones.EstablecerFechasContrato(out DateTime fechaInicial, out DateTime fechaFinal, intMesesDuracion);
-
-            dtFechaInicioContrato.Value = fechaInicial;
-            dtFechaFinContrato.Value = fechaFinal;
+            return 0;
         }
         #endregion
 
@@ -1026,7 +962,7 @@ namespace CapaPresentacion
         private void chkAsignaciónFamiliarContratoLaboral_CheckedChanged(object sender, EventArgs e)
         {
             decimal salarioBase = Convert.ToDecimal(txtSalarioContratoLaboral.Text);
-            CalcularMontoAsignacionFamiliar objCalcularMontoAsignacionFamiliar = new CalcularMontoAsignacionFamiliar();
+            MetodoCalcularAsignacionFamiliar objCalcularMontoAsignacionFamiliar = new MetodoCalcularAsignacionFamiliar();
 
             if (chkAsignaciónFamiliarContratoLaboral.Checked)
             {

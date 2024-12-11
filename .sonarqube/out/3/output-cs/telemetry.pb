@@ -1,0 +1,1 @@
+GR9D:\C#\SistemaMonimaTrabajo\CapaNegocio\CapaNegocio.csprojò	CSharp7_3

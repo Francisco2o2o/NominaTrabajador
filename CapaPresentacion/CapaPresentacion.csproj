@@ -149,7 +149,10 @@
     <Compile Include="Utilidades\FuncionesGenerales.cs" />
     <Compile Include="Utilidades\FuncionValidaciones.cs" />
     <Compile Include="Utilidades\Mbox.cs" />
-    <Compile Include="Utilidades\MetodosValidaciones.cs" />
+    <Compile Include="Utilidades\MetodoSonFechasValidarContrato.cs" />
+    <Compile Include="Utilidades\MetodoSoloSonLetrasYEspacios.cs" />
+    <Compile Include="Utilidades\MetodoSoloSonNumeros.cs" />
+    <Compile Include="Utilidades\MetodoSoloSonNumeros2.cs" />
     <Compile Include="Utilidades\ToggleCustom.cs">
       <SubType>Component</SubType>
     </Compile>

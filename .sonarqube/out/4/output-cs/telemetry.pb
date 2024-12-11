@@ -1,0 +1,1 @@
+QRCD:\C#\SistemaMonimaTrabajo\CapaPresentacion\CapaPresentacion.csprojò	CSharp7_3

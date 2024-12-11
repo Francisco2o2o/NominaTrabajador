@@ -1,0 +1,28 @@
+Product projects
+---------------------------------------
+
+
+Test projects
+---------------------------------------
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\CapaEntidad.csproj
+D:\C#\SistemaMonimaTrabajo\CapaConexion\CapaConexion.csproj
+D:\C#\SistemaMonimaTrabajo\CapaPersistencia\CapaPersistencia\CapaPersistencia.csproj
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\CapaNegocio.csproj
+D:\C#\SistemaMonimaTrabajo\CapaPresentacion\CapaPresentacion.csproj
+
+
+Invalid projects
+---------------------------------------
+{none}
+
+
+Skipped projects
+---------------------------------------
+{none}
+
+
+Excluded projects
+---------------------------------------
+{none}
+
+

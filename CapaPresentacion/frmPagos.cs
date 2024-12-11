@@ -23,7 +23,7 @@ namespace CapaPresentacion
     {
         //Variables de busqueda
         static Boolean pasoLoad;
-   
+
         public frmPagos()
         {
             InitializeComponent();
@@ -48,16 +48,13 @@ namespace CapaPresentacion
             dgvPagos.Columns.Add("nombreTrabajador", "Nombre del Trabajador");
             dgvPagos.Columns.Add("fechaPago", "Fecha de Pago");
             dgvPagos.Columns.Add("SalarioContrato", "Salario");
-
             dgvPagos.Columns.Add("DescuentoSeguroSalud", "Deducción Salud");
             dgvPagos.Columns.Add("DescuentoSeguroVida", "Deducción Vida");
             dgvPagos.Columns.Add("DescuentoSeguroAccidentes", "Deducción Accidentes");
             dgvPagos.Columns.Add("DescuentoAFP", "AFP");
             dgvPagos.Columns.Add("DescuentoDeduccionImpuestos", "Deducción Impuestos");
             dgvPagos.Columns.Add("DescuentosTotales", "Descuentos Totales");
-
             dgvPagos.Columns.Add("Bonificacion", "Bonificacion");
-
             dgvPagos.Columns.Add("SalarioNeto", "Salario Neto");
 
 
@@ -76,13 +73,12 @@ namespace CapaPresentacion
             dgvPeriodoPagos.Columns.Add("fechaPago", "Fecha de Pago");
             #endregion
 
-
             FuncionLlenarComboBoxPeriodo(cboPeriodo, 0, "", false);
         }
 
         private void frmPagos_Load(object sender, EventArgs e)
         {
-            bool EstadoActivarBotonRegistrar = FuncionesValidaciones.FuncionPropiedadesControlesPagos(btnRegistrarPagos, btnLimpiarControlesPagos, FuncionValidarTextBox());
+            bool EstadoActivarBotonRegistrar = FuncionesValidaciones.FuncionPropiedadesControlesPagos(btnRegistrarPagos, btnLimpiarControlesPagos, FuncionEstaTextBoxVacio());
             btnRegistrarPagos.Enabled = EstadoActivarBotonRegistrar;
 
             cboMetodoPago.SelectedIndex = 0;
@@ -115,7 +111,7 @@ namespace CapaPresentacion
         }
 
         #region  Validar Controles Vacios
-        public bool FuncionValidarTextBox()
+        public bool FuncionEstaTextBoxVacio()
         {
             if (txtDescuentosTotales.Text != "0.00" && cboPeriodo.SelectedIndex != 0)
             {
@@ -129,9 +125,9 @@ namespace CapaPresentacion
         #endregion
 
         #region Funcion Validar Changed
-        public void FuncionValidarChanged()
+        public void FuncionEstaChangedVacio()
         {
-            bool esValido = FuncionValidarTextBox();
+            bool esValido = FuncionEstaTextBoxVacio();
             btnLimpiarControlesPagos.Visible = esValido;
             btnRegistrarPagos.Enabled = esValido;
         }
@@ -142,7 +138,6 @@ namespace CapaPresentacion
         {
             int IdMetodoPago = cboMetodoPago.SelectedIndex;
             txtIdMetodoPago.Text = IdMetodoPago.ToString();
-            //FuncionValidarChanged();
         }
         #endregion
 
@@ -166,10 +161,6 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return lstPeriodo;
             }
-            finally
-            {
-                lstPeriodo = null;
-            }
         }
         #endregion
 
@@ -182,7 +173,7 @@ namespace CapaPresentacion
                 dtFechaInicioPeriodo.Value = selectedPeriodo.FechaInicioPeriodo;
                 dtFechaFinPeriodo.Value = selectedPeriodo.FechaFinPeriodo;
             }
-            FuncionValidarChanged();
+            FuncionEstaChangedVacio();
         }
         #endregion
 
@@ -191,7 +182,7 @@ namespace CapaPresentacion
         public Boolean FuncionBuscarContratoLaboral(DataGridView dgv, Int32 numPagina)
         {
             NegocioContratoLaboral objNegocioContratoLaboral = new NegocioContratoLaboral();
-            DataTable dtContratoLaboral = new DataTable();
+            DataTable dtContratoLaboral;
             String documentoTrabajador;
             Int32 filas = 11;
             DateTime fechaInicial = dtFechaInicio.Value;
@@ -209,8 +200,6 @@ namespace CapaPresentacion
                 chkSeleccionarTodosContrato.Enabled = true;
                 dgv.Rows.Clear();
                 Int32 totalResultados = dtContratoLaboral.Rows.Count;
-
-
 
                 if (dtContratoLaboral.Rows.Count > 0)
                 {
@@ -272,10 +261,6 @@ namespace CapaPresentacion
                 MessageBox.Show($"Error al buscar contrato laboral: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            finally
-            {
-                objNegocioContratoLaboral = null;
-            }
         }
         #endregion
 
@@ -322,12 +307,13 @@ namespace CapaPresentacion
         List<Deducciones> listaDeducciones = new List<Deducciones>();
         private void ActualizarDeducciones()
         {
-            MetodosPagos metodosPagos = new MetodosPagos();
-
+            MetodoCalcularDeduccionSeguros metodosPagos = new MetodoCalcularDeduccionSeguros();
+            MetodoCalcularAFP metodoCalcularAFP = new MetodoCalcularAFP();
+            MetodoCalcularDeduccionImpuestos metodoCalcularDeduccionImpuestos = new MetodoCalcularDeduccionImpuestos();
+            MetodoCalcularDescuentosTotales metodoCalcularDescuentosTotales = new MetodoCalcularDescuentosTotales();
             List<decimal> salariosSeleccionados = ObtenerSalariosSeleccionados();
 
             listaDeducciones.Clear();
-
 
             if (salariosSeleccionados.Count == 0)
             {
@@ -346,8 +332,8 @@ namespace CapaPresentacion
                         decimal deduccionVida = metodosPagos.CalcularDeduccionSeguros(new List<decimal> { salarioBase + asignacionFamiliar }, 2);
                         decimal deduccionAccidentes = metodosPagos.CalcularDeduccionSeguros(new List<decimal> { salarioBase + asignacionFamiliar }, 3);
 
-                        decimal afp = metodosPagos.CalcularAFP(new List<decimal> { salarioBase + asignacionFamiliar });
-                        decimal deduccionImpuestos = metodosPagos.CalcularDeduccionImpuestos(new List<decimal> { salarioBase + asignacionFamiliar });
+                        decimal afp = metodoCalcularAFP.CalcularAFP(new List<decimal> { salarioBase + asignacionFamiliar });
+                        decimal deduccionImpuestos = metodoCalcularDeduccionImpuestos.CalcularDeduccionImpuestos(new List<decimal> { salarioBase + asignacionFamiliar });
 
                         Deducciones deducciones = new Deducciones(deduccionSalud, deduccionVida, deduccionAccidentes, afp, deduccionImpuestos);
                         listaDeducciones.Add(deducciones);
@@ -376,7 +362,7 @@ namespace CapaPresentacion
             decimal deduccionImpuestosTotal = listaDeducciones.Sum(d => d.DeduccionImpuestos);
             txtDeducciónImpuestos.Text = deduccionImpuestosTotal.ToString("F2");
 
-            decimal descuentosTotales = metodosPagos.CalcularDescuentosTotales(totalDeducciones, afpTotal, deduccionImpuestosTotal);
+            decimal descuentosTotales = metodoCalcularDescuentosTotales.CalcularDescuentosTotales(totalDeducciones, afpTotal, deduccionImpuestosTotal);
             txtDescuentosTotales.Text = descuentosTotales.ToString("F2");
         }
         #endregion
@@ -384,11 +370,10 @@ namespace CapaPresentacion
         #region Funcion Culcular Total Pago
         public void FuncionCalcularMontoTotalPago()
         {
-            MetodosPagos metodosPagos = new MetodosPagos();
+            MetodoCalcularMontoTotalPago metodoCalcularMontoTotalPago = new MetodoCalcularMontoTotalPago();
             if (dgvPagos.Rows.Count > 0)
             {
                 List<decimal> salariosSeleccionados = new List<decimal>();
-
 
                 foreach (DataGridViewRow row in dgvPagos.Rows)
                 {
@@ -403,8 +388,7 @@ namespace CapaPresentacion
                         return;
                     }
                 }
-
-                decimal totalSeguro = metodosPagos.CalcularMontoTotalPago(salariosSeleccionados);
+                decimal totalSeguro = metodoCalcularMontoTotalPago.CalcularMontoTotalPago(salariosSeleccionados);
 
                 txtMontoTotalPago.Text = totalSeguro.ToString("F2");
             }
@@ -468,19 +452,8 @@ namespace CapaPresentacion
         {
             dgvPeriodoPagos.Visible = false;
             Boolean bResult;
-            if (tipoCon == 1)
-            {
-                if (pasoLoad)
-                {
-                    bResult = FuncionBuscarContratoLaboral(dgvContratoLaboral, 0);
 
-                    if (!bResult)
-                    {
-                        Mbox.Show("Error al realizar busqueda. Comunicar al Administrador del Sistema", "Error de Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-            }
-            else if (tipoCon == 2)
+            if (tipoCon == 1 || tipoCon == 2)
             {
                 if (pasoLoad)
                 {
@@ -505,9 +478,7 @@ namespace CapaPresentacion
                     }
                 }
             }
-
         }
-
         #endregion
 
         #region Tipos de Busqueda 
@@ -547,7 +518,7 @@ namespace CapaPresentacion
                 {
                     decimal salarioContrato = Convert.ToDecimal(row.Cells["salarioBaseTipoContratoLaboral"].Value);
 
-                    if (salarioContrato <=0)
+                    if (salarioContrato <= 0)
                     {
                         MessageBox.Show("El salario no debe ser 0; debe ser igual a lo estipulado en el contrato.", "Error de Proceso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         dgvPagos.Visible = false;
@@ -613,8 +584,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por favor seleccione un registro para proceder con el pago.", "Error de Proceso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-
         }
         #endregion
 
@@ -630,30 +599,41 @@ namespace CapaPresentacion
         {
             dgvContratoLaboral.Enabled = true;
             chkSeleccionarTodosContrato.Enabled = true;
-            btnLimpiarControlesPagos.Visible = false;
+            btnProcesarContratosLaborales.Enabled = true;
+
+            LimpiarPagos();
+            LimpiarCheckboxesDeducciones();
+
+            cboPeriodo.SelectedIndex = 0;
+            txtIdPeriodo.Text = "";
+            txtMontoTotalPago.Text = "";
+            cboMetodoPago.SelectedIndex = 0;
+
+            lblMontoTotal.Visible = false;
+            lblMonedaMontoTotal.Visible = false;
+            txtMontoTotalPago.Visible = false;
+        }
+        #endregion
+
+        #region Funciones Auxiliares
+        private void LimpiarPagos()
+        {
             if (dgvPagos.Rows.Count > 0)
             {
                 dgvPagos.Rows.Clear();
                 dgvPagos.Visible = false;
             }
-
+        }
+        private void LimpiarCheckboxesDeducciones()
+        {
             chkDeduccionesSeguros.Checked = false;
             chkSeguroSalud.Checked = false;
             chkSeguroVida.Checked = false;
             chkSeguroAccidentes.Checked = false;
             chkDeducciónImpuestos.Checked = false;
             chkAFP.Checked = false;
-
-            cboPeriodo.SelectedIndex = 0;
-            txtIdPeriodo.Text = "";
-            txtMontoTotalPago.Text = "";
-            cboMetodoPago.SelectedIndex = 0;
-            btnProcesarContratosLaborales.Enabled = true;
-            lblMontoTotal.Visible = false;
-            lblMonedaMontoTotal.Visible = false;
-            txtMontoTotalPago.Visible = false;
-
         }
+
         #endregion
 
         #region Habilitar fechas de busqueda
@@ -668,16 +648,14 @@ namespace CapaPresentacion
                 gbRangoFechas.Enabled = false;
             }
         }
-
-
         #endregion
 
         #region Función Registrar Pago
-        public String funcionRegistrarPago()
+        public string FuncionRegistrarPago()
         {
             NegocioPago objNegocioPago = new NegocioPago();
             Pago objPago = new Pago();
-            String mensajeValidar = "";
+            string mensajeValidar;
 
             try
             {
@@ -763,7 +741,7 @@ namespace CapaPresentacion
         {
             if (cboMetodoPago.SelectedIndex != 0)
             {
-                string pResult = funcionRegistrarPago();
+                string pResult = FuncionRegistrarPago();
 
                 if (pResult == "Pago Registrado")
                 {
@@ -803,7 +781,7 @@ namespace CapaPresentacion
         #region Función Listar Períodos
         public Boolean FuncionBuscarPeriodos(DataGridView dgv)
         {
-            dgvContratoLaboral.Visible = false; 
+            dgvContratoLaboral.Visible = false;
             NegocioPeriodo objNegocioPeriodo = new NegocioPeriodo();
             DataTable dtPeriodo = new DataTable();
 
@@ -828,11 +806,11 @@ namespace CapaPresentacion
                             item["nombrePeriodo"],
                             item["montoTotalPago"],
                             item["DescuentosTotales"],
-                            item["DescuentoDeduccionImpuestos"], 
-                            item["DescuentoSeguroAccidentes"], 
+                            item["DescuentoDeduccionImpuestos"],
+                            item["DescuentoSeguroAccidentes"],
                             item["DescuentoSeguroSalud"],
-                            item["DescuentoSeguroVida"], 
-                            item["DescuentoAFP"], 
+                            item["DescuentoSeguroVida"],
+                            item["DescuentoAFP"],
                             Convert.ToDateTime(item["fechaPago"]).ToString("dd/MM/yyyy")
                         );
                     }
@@ -852,5 +830,4 @@ namespace CapaPresentacion
         #endregion
 
     }
-
 }

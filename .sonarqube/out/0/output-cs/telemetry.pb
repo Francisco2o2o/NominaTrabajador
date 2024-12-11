@@ -1,0 +1,1 @@
+GR9D:\C#\SistemaMonimaTrabajo\CapaEntidad\CapaEntidad.csprojò	CSharp7_3

@@ -1,0 +1,3 @@
+﻿D:\C#\SistemaMonimaTrabajo\CapaConexion\ConexionSql.cs
+D:\C#\SistemaMonimaTrabajo\CapaConexion\Properties\AssemblyInfo.cs
+D:\C#\SistemaMonimaTrabajo\CapaConexion\packages.config

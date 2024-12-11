@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4/dVqcwjazzmzbnaURw7bgPMZoJnj2Nhvd+HFpE8Lc0=</dsig:DigestValue>
+        <dsig:DigestValue>0YjyTgEPImyyT3q0YomsI7n5ieMTtsdXklSWN43HDOU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kzOlukud90IoQqtbBNooTAm30UtaZS+p1zffFeKXUHA=</dsig:DigestValue>
+        <dsig:DigestValue>LGM5jqAndT0KhjyCymANGVpw2uB62Mi+RsSPA4CNMa8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gv3J/ytKZgeBCf3i0H2n0GmJI+1LQ2v28XxYO1G5zlI=</dsig:DigestValue>
+        <dsig:DigestValue>RyJWK2AYPrpjYW4xXW1DeXRp2ngCnfrAC9lx82KqydQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IyvzDpIAUnoLmj4R3Ltm2vU8ddzBgnYlFZTbv63ZuzU=</dsig:DigestValue>
+        <dsig:DigestValue>fgu+sPYzZpQ3zLqoiQ/zED+fC+6AxESN6nbbTuIBjl8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -307,14 +307,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIGC- Nomina de Trabajadores.exe" size="4090880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIGC- Nomina de Trabajadores.exe" size="4091904">
       <assemblyIdentity name="SIGC- Nomina de Trabajadores" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SKspTEHy8A420g06UT0uc7zJpqfVnIW6Cy/eDWN08tM=</dsig:DigestValue>
+        <dsig:DigestValue>LsqBSus6b9PCy8KRutpEqbT4MI/gjBuFn1Z0Jf2SAOA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

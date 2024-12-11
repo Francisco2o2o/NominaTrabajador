@@ -74,7 +74,6 @@ namespace LayerPresentation.Utils
             DateTime ultimoDiaMes = primerDiaMes.AddMonths(1).AddDays(-1);
             DTFechaFinal.Value = ultimoDiaMes;
         }
-
         public static class PlaceholderHelper
         {
             private static readonly Dictionary<GunaTextBox, string> _placeholders = new Dictionary<GunaTextBox, string>();

@@ -64,8 +64,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MetodosContratoLaboral.cs" />
-    <Compile Include="MetodosPagos.cs" />
+    <Compile Include="MetodosFrmContratoLaboral\MetodoCalcularAsignacionFamiliar.cs" />
+    <Compile Include="MetodosFrmContratoLaboral\MetodoCalcularSalarioPorHora.cs" />
+    <Compile Include="MetodosFrmPagos\MetodoCalcularAFP.cs" />
+    <Compile Include="MetodosFrmPagos\MetodoCalcularDeduccionImpuestos.cs" />
+    <Compile Include="MetodosFrmPagos\MetodoCalcularDescuentosTotales.cs" />
+    <Compile Include="MetodosFrmPagos\MetodoCalcularMontoTotalPago.cs" />
+    <Compile Include="MetodosFrmPagos\MetodoCalcularDeduccionSeguros.cs" />
     <Compile Include="NegocioCargoContratoLaboral.cs" />
     <Compile Include="NegocioConceptoPago.cs" />
     <Compile Include="NegocioContratoLaboral.cs" />

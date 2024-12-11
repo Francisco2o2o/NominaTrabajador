@@ -46,9 +46,6 @@ namespace LayerPresentation.FormNotificaciones
             return result;
         }
 
-        /*-> IWin32Window Owner:
-            *      Displays a message box in front of the specified object and with the other specified parameters.
-            *      An implementation of IWin32Window that will own the modal dialog box.*/
         public static DialogResult Show(IWin32Window owner, string text)
         {
             DialogResult result;

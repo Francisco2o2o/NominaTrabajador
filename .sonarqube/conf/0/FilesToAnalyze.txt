@@ -1,0 +1,13 @@
+﻿D:\C#\SistemaMonimaTrabajo\CapaEntidad\CargoContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\ConceptoPago.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\ContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\ContratoPago.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\Deducciones.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\DetallePago.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\Especializacion.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\Pago.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\Periodo.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\Properties\AssemblyInfo.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\TipoContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\Trabajador.cs
+D:\C#\SistemaMonimaTrabajo\CapaEntidad\packages.config

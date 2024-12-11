@@ -1,0 +1,1 @@
+IR;D:\C#\SistemaMonimaTrabajo\CapaConexion\CapaConexion.csprojò	CSharp7_3

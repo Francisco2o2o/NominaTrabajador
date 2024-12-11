@@ -1,0 +1,12 @@
+﻿D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosPagos.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioConceptoPago.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioEspecializacion.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPago.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPeriodo.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTipoContratoLaboral.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTrabajador.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\Properties\AssemblyInfo.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\packages.config
