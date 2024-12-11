@@ -2,8 +2,11 @@ q
 fD:\C#\SistemaMonimaTrabajo\CapaPresentacion\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.csutf-8V
 KD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Properties\Settings.Designer.csutf-8W
 LD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Properties\Resources.Designer.csutf-8O
-FD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\ToggleCustom.csutf-8V
-MD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodosValidaciones.csutf-8G
+FD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\ToggleCustom.csutf-8X
+OD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSoloSonNumeros2.csutf-8W
+ND:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSoloSonNumeros.csutf-8_
+VD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSoloSonLetrasYEspacios.csutf-8a
+XD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSonFechasValidarContrato.csutf-8G
 >D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\Mbox.csutf-8V
 MD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\FuncionValidaciones.csutf-8U
 LD:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\FuncionesGenerales.csutf-8]

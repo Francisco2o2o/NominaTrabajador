@@ -61,5 +61,23 @@ namespace TestNomina
             var resultado = metodo.CalcularDeduccionSeguros(salarios, 1);
             Assert.AreEqual(-270m, resultado);
         }
+
+        [TestMethod]
+        public void TestMethodCalcularDeduccionSeguros_ValoresGrandes()
+        {
+            var metodo = new MetodoCalcularDeduccionSeguros();
+            var salarios = new List<decimal> { 1000000m, 2000000m, 1500000m };
+            var resultado = metodo.CalcularDeduccionSeguros(salarios, 1);
+            Assert.AreEqual(405000m, resultado);
+        }
+
+        [TestMethod]
+        public void TestMethodCalcularDeduccionSeguros_ValoresCercanosACero()
+        {
+            var metodo = new MetodoCalcularDeduccionSeguros();
+            var salarios = new List<decimal> { 0.01m, 0.02m, 0.03m };
+            var resultado = metodo.CalcularDeduccionSeguros(salarios, 1);
+            Assert.AreEqual(0.0054m, resultado, 0.0001m);
+        }
     }
 }

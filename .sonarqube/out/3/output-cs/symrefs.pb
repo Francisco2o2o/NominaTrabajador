@@ -1,17 +1,22 @@
-Ì
-8D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPeriodo.cs
+Ü
+XD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDeduccionSeguros.cs
 
- 
+
+
+ /
 
- 9
-@ IP Y
-R _[ h
-i oj p
-  6 -
+ /
+> F( 0
+L Y ! &2
+ $ $ $ $ #C
+AD:\C#\SistemaMonimaTrabajo\CapaNegocio\Properties\AssemblyInfo.cs¦
+VD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularMontoTotalPago.cs
 
- 1
-    6## -C
-AD:\C#\SistemaMonimaTrabajo\CapaNegocio\Properties\AssemblyInfo.cs¹
+		 -
+
+ -
+< D( 0
+ + ' *¹
 ;D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTrabajador.cs
 
  "
@@ -47,14 +52,7 @@ AD:\C#\SistemaMonimaTrabajo\CapaNegocio\Properties\AssemblyInfo.cs¹
 
 CC >
 CCE QHH\ h
-EE# <HH 0{
-5D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPago.cs
-
- 
-
- *
-0 7A H
- 0 &¼
+EE# <HH 0¼
 DD:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTipoContratoLaboral.cs
 
  +
@@ -65,16 +63,26 @@ DD:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTipoContratoLaboral.cs
 
 ™ Ÿ
 š  
-, N 9±
-=D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioConceptoPago.cs
+, N 9Ì
+8D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPeriodo.cs
 
- $
+ 
 
-" C
-J XZ h
-a sj |
-	} ƒ	~ „
-% @ 2·
+ 9
+@ IP Y
+R _[ h
+i oj p
+  6 -
+
+ 1
+    6## -{
+5D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioPago.cs
+
+ 
+
+ *
+0 7A H
+ 0 &·
 @D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioEspecializacion.cs
 
  '
@@ -124,7 +132,16 @@ DD:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTipoContratoLaboral.cs
 
 @@ ¦
 FF˜ ¡
-BB( FFF 5·
+BB( FFF 5±
+=D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioConceptoPago.cs
+
+ $
+
+" C
+J XZ h
+a sj |
+	} ƒ	~ „
+% @ 2·
 ED:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.cs
 
  ,
@@ -133,54 +150,42 @@ ED:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.cs
 K RL S
 [ fU `
 p vb h
-- A +Ü
-6D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosPagos.cs
+- A +Õ
+YD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDescuentosTotales.cs
 
-
-
- 
+		 0
 
- /
-> F( 0
-L Y ! &2
- $ $ $ $ #
+ 0
+9 K% 7
+U X: =
+b t@ R
+ * " )Ú
+`D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmContratoLaboral\MetodoCalcularSalarioPorHora.cs
 
-"" 8
-""A L&&* 5
-""V `&&8 B
-""j z&&E U
-$$ /&& '(( .
+ -
 
-++ "
-++1 9//( 0
--- 22 44 
+ *
+3 ?  )
+E Q% 1, 8
+_ m  ª
+ZD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDeduccionImpuestos.cs
 
-77 1
-77@ H;;( 0
-99 +>> '@@ *
+		 1
 
-CC 0
-CC9 KGG% 7
-CCU XGG: =
-CCb tGG@ R
-EE *GG "II )
+ 1
+@ H( 0
+ + ' *›
+KD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularAFP.cs
 
-LL -
-LL< DPP( 0
-NN +SS 'UU *”
-@D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosContratoLaboral.cs
+		 "
 
- '
+ "
+1 9( 0
+   ´
+dD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmContratoLaboral\MetodoCalcularAsignacionFamiliar.cs
 
- 3
+ 1
 
- .
-7 C  ! -
-I U) 50 <
-c q  
-
- 4
-
-   5
-  > I"" ''2 =
-'' /((" 9
+ 1
+: E . 9
+ + 5

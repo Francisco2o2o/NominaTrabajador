@@ -1,0 +1,13 @@
+k
+`D:\C#\SistemaMonimaTrabajo\TestNomina\obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.csutf-8N
+ED:\C#\SistemaMonimaTrabajo\TestNomina\TestEstablecerFechasContrato.csutf-8P
+GD:\C#\SistemaMonimaTrabajo\TestNomina\TestValidarSoloLetrasYEspacios.csutf-8I
+@D:\C#\SistemaMonimaTrabajo\TestNomina\TestValidarSoloNumeros2.csutf-8H
+?D:\C#\SistemaMonimaTrabajo\TestNomina\TestValidarSoloNumeros.csutf-8L
+CD:\C#\SistemaMonimaTrabajo\TestNomina\TestCalcularSalarioPorHora.csutf-8P
+GD:\C#\SistemaMonimaTrabajo\TestNomina\TestCalcularAsignacionFamiliar.csutf-8L
+CD:\C#\SistemaMonimaTrabajo\TestNomina\TestCalcularMontoTotalPago.csutf-8N
+ED:\C#\SistemaMonimaTrabajo\TestNomina\TestCalcularDeduccionSeguros.csutf-8P
+GD:\C#\SistemaMonimaTrabajo\TestNomina\TestCalcularDeduccionImpuestos.csutf-8A
+8D:\C#\SistemaMonimaTrabajo\TestNomina\TestCalcularAFP.csutf-8I
+@D:\C#\SistemaMonimaTrabajo\TestNomina\Properties\AssemblyInfo.csutf-8

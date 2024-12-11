@@ -8,6 +8,11 @@ DD:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioTipoContratoLaboral.csutf-8A
 @D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioEspecializacion.csutf-8I
 @D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioContratoLaboral.csutf-8F
 =D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioConceptoPago.csutf-8N
-ED:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.csutf-8?
-6D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosPagos.csutf-8I
-@D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosContratoLaboral.csutf-8
+ED:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.csutf-8a
+XD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDeduccionSeguros.csutf-8_
+VD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularMontoTotalPago.csutf-8b
+YD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDescuentosTotales.csutf-8c
+ZD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDeduccionImpuestos.csutf-8T
+KD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularAFP.csutf-8i
+`D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmContratoLaboral\MetodoCalcularSalarioPorHora.csutf-8m
+dD:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmContratoLaboral\MetodoCalcularAsignacionFamiliar.csutf-8

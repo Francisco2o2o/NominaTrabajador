@@ -1,0 +1,1 @@
+URGD:\C#\SistemaMonimaTrabajo\TestNomina\Test_SIGC-NominaDeTrabajor.csprojò	CSharp7_3

@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\C#\\SistemaMonimaTrabajo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|d:\\c#\\sistemamonimatrabajo\\testnomina\\testcalculardeduccionimpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|solutionrelative:testnomina\\testcalculardeduccionimpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|d:\\c#\\sistemamonimatrabajo\\testnomina\\testcalcularmontototalpago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|solutionrelative:testnomina\\testcalcularmontototalpago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|d:\\c#\\sistemamonimatrabajo\\testnomina\\testcalcularasignacionfamiliar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|solutionrelative:testnomina\\testcalcularasignacionfamiliar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|d:\\c#\\sistemamonimatrabajo\\testnomina\\testestablecerfechascontrato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|solutionrelative:testnomina\\testestablecerfechascontrato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|d:\\c#\\sistemamonimatrabajo\\testnomina\\testcalculardeduccionseguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|solutionrelative:testnomina\\testcalculardeduccionseguros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|d:\\c#\\sistemamonimatrabajo\\testnomina\\testcalcularsalarioporhora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C53CE8A-EAF4-47E6-825D-011117F22741}|TestNomina\\Test_SIGC-NominaDeTrabajor.csproj|solutionrelative:testnomina\\testcalcularsalarioporhora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestCalcularDeduccionImpuestos.cs",
+              "DocumentMoniker": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularDeduccionImpuestos.cs",
+              "RelativeDocumentMoniker": "TestNomina\\TestCalcularDeduccionImpuestos.cs",
+              "ToolTip": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularDeduccionImpuestos.cs",
+              "RelativeToolTip": "TestNomina\\TestCalcularDeduccionImpuestos.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAUwJkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T10:09:41.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestCalcularMontoTotalPago.cs",
+              "DocumentMoniker": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularMontoTotalPago.cs",
+              "RelativeDocumentMoniker": "TestNomina\\TestCalcularMontoTotalPago.cs",
+              "ToolTip": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularMontoTotalPago.cs",
+              "RelativeToolTip": "TestNomina\\TestCalcularMontoTotalPago.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAywFIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T10:06:20.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TestCalcularAsignacionFamiliar.cs",
+              "DocumentMoniker": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularAsignacionFamiliar.cs",
+              "RelativeDocumentMoniker": "TestNomina\\TestCalcularAsignacionFamiliar.cs",
+              "ToolTip": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularAsignacionFamiliar.cs",
+              "RelativeToolTip": "TestNomina\\TestCalcularAsignacionFamiliar.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T10:04:00.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestEstablecerFechasContrato.cs",
+              "DocumentMoniker": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestEstablecerFechasContrato.cs",
+              "RelativeDocumentMoniker": "TestNomina\\TestEstablecerFechasContrato.cs",
+              "ToolTip": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestEstablecerFechasContrato.cs",
+              "RelativeToolTip": "TestNomina\\TestEstablecerFechasContrato.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T10:02:04.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TestCalcularDeduccionSeguros.cs",
+              "DocumentMoniker": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularDeduccionSeguros.cs",
+              "RelativeDocumentMoniker": "TestNomina\\TestCalcularDeduccionSeguros.cs",
+              "ToolTip": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularDeduccionSeguros.cs",
+              "RelativeToolTip": "TestNomina\\TestCalcularDeduccionSeguros.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAvwD4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T09:59:31.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TestCalcularSalarioPorHora.cs",
+              "DocumentMoniker": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularSalarioPorHora.cs",
+              "RelativeDocumentMoniker": "TestNomina\\TestCalcularSalarioPorHora.cs",
+              "ToolTip": "D:\\C#\\SistemaMonimaTrabajo\\TestNomina\\TestCalcularSalarioPorHora.cs",
+              "RelativeToolTip": "TestNomina\\TestCalcularSalarioPorHora.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAQwEEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T09:56:28.823Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

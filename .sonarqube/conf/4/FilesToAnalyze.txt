@@ -15,7 +15,10 @@ D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\frmNotificacion.Designer.
 D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\FuncionesGenerales.cs
 D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\FuncionValidaciones.cs
 D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\Mbox.cs
-D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodosValidaciones.cs
+D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSonFechasValidarContrato.cs
+D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSoloSonLetrasYEspacios.cs
+D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSoloSonNumeros.cs
+D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\MetodoSoloSonNumeros2.cs
 D:\C#\SistemaMonimaTrabajo\CapaPresentacion\Utilidades\ToggleCustom.cs
 D:\C#\SistemaMonimaTrabajo\CapaPresentacion\IconInstaller.ico
 D:\C#\SistemaMonimaTrabajo\CapaPresentacion\frmContratoLaboral.resx

@@ -1,5 +1,10 @@
-﻿D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosContratoLaboral.cs
-D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosPagos.cs
+﻿D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmContratoLaboral\MetodoCalcularAsignacionFamiliar.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmContratoLaboral\MetodoCalcularSalarioPorHora.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularAFP.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDeduccionImpuestos.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDescuentosTotales.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularMontoTotalPago.cs
+D:\C#\SistemaMonimaTrabajo\CapaNegocio\MetodosFrmPagos\MetodoCalcularDeduccionSeguros.cs
 D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioCargoContratoLaboral.cs
 D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioConceptoPago.cs
 D:\C#\SistemaMonimaTrabajo\CapaNegocio\NegocioContratoLaboral.cs
